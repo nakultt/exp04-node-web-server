@@ -1,0 +1,14 @@
+{
+  "name": "exp04-node-web-server",
+  "version": "1.0.0",
+  "description": "A basic Node.js + Express web server that delivers static HTML pages",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "author": "Nakul T (24AD068)",
+  "license": "MIT",
+  "dependencies": {
+    "express": "^5.2.1"
+  }
+}
