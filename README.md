@@ -27,6 +27,20 @@ A basic web server built with Node.js and Express that delivers static HTML page
 | Front end | HTML5, CSS3 |
 | Tools | npm, curl, Google Chrome |
 
+## Architecture
+
+```mermaid
+flowchart LR
+    B[Browser] -->|HTTP| S[server.js<br/>Express 5]
+    S -->|/ · static| P[public/index.html<br/>public/css/style.css]
+    S -->|GET /about| A[public/about.html]
+    S -->|GET /contact| C[public/contact.html]
+    S -->|GET /api/status| J[JSON status<br/>uptime · time]
+    S -->|anything else| N[404.html<br/>status 404]
+```
+
+The server serves the `public/` folder as static files, adds explicit routes for the clean URLs `/about` and `/contact`, exposes a small JSON status endpoint, and falls back to a custom 404 page.
+
 ## Folder Structure
 
 ```
